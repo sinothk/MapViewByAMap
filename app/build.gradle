@@ -16,6 +16,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // 签名
+    signingConfigs {
+        release {
+            storeFile file('sinothk_release.jks')
+            storePassword 'liangyt2025'
+            keyAlias 'sinothk_release'
+            keyPassword 'liangyt2025'
+        }
+        debug {
+            storeFile file('sinothk_debug.jks')
+            storePassword 'liangyt2025'
+            keyAlias 'sinothk_debug'
+            keyPassword 'liangyt2025'
+        }
+
+        buildTypes {
+            debug {
+                signingConfig signingConfigs.debug
+            }
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
 }
 
 dependencies {
