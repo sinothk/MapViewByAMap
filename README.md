@@ -13,6 +13,6 @@
 ## Step 2. Add the dependency
 
       dependencies {
-              implementation 'com.github.sinothk:MapViewByAMap:Tag'
+              implementation 'com.github.sinothk:MapViewByAMap:1.19.0116'
       }
 
