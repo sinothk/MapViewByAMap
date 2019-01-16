@@ -19,6 +19,10 @@ import com.amap.api.maps.model.MultiPointItem;
 import com.amap.api.maps.model.MultiPointOverlay;
 import com.amap.api.maps.model.MultiPointOverlayOptions;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.sinothk.map.amap.location.AMapLocation;
+import com.sinothk.map.amap.location.AMapLocationCallback;
+import com.sinothk.map.amap.location.AMapLocationEntity;
+import com.sinothk.map.amap.location.MapLocationHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +47,18 @@ public class MapViewByAMapMainActivity extends AppCompatActivity {
             aMap = mMapView.getMap();
             initLocMap();
             setMultiPointOverlay();
+
+            MapLocationHelper.with(this).location(new AMapLocationCallback() {
+
+                @Override
+                public void complete(AMapLocationEntity locEntity) {
+                    if (locEntity.getCode() == 0) {
+
+                    } else {
+
+                    }
+                }
+            });
         }
     }
 
