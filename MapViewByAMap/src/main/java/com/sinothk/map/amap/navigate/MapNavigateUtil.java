@@ -74,12 +74,6 @@ public class MapNavigateUtil {
 
     /**
      * 跳转百度地图
-     *
-     * @param mActivity
-     * @param mAddressStr
-     * @param mLng
-     * @param mLat
-     * @param dataFromType
      */
     public static void goToBaiduMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
         // 百度数据->中建华府F区: 26.6094876522,106.7336647792
@@ -108,12 +102,6 @@ public class MapNavigateUtil {
 
     /**
      * 跳转高德地图
-     *
-     * @param mActivity
-     * @param mAddressStr
-     * @param mLng
-     * @param mLat
-     * @param dataFromType
      */
     public static void goToGaodeMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
         // 百度数据->中建华府F区: 26.6094876522,106.7336647792
@@ -139,6 +127,35 @@ public class MapNavigateUtil {
 
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(stringBuffer));
         intent.setPackage("com.autonavi.minimap");
+        mActivity.startActivity(intent);
+    }
+
+    /**
+     * 跳转腾讯地图
+     *
+     * @param mActivity
+     * @param mAddressStr
+     * @param mLng
+     * @param mLat
+     * @param dataFromType
+     */
+    public static void goToTencentMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
+        if (!isInstalled(mActivity, "com.tencent.map")) {
+            Toast.makeText(mActivity, "请先安装腾讯地图客户端", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        LatLng endPoint;
+        if (dataFromType == DATA_FROM_BAIDU) {
+            // 如果是百度数据，需要转换
+            endPoint = BD2GCJ(new LatLng(mLat, mLng));//坐标转换
+        } else {
+            endPoint = new LatLng(mLat, mLng);//坐标转换
+        }
+
+        String stringBuffer = "qqmap://map/routeplan?type=drive" +
+                "&tocoord=" + endPoint.latitude + "," + endPoint.longitude + "&to=" + mAddressStr;
+
+        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(stringBuffer));
         mActivity.startActivity(intent);
     }
 }
