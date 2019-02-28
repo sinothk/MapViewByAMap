@@ -23,6 +23,7 @@ import com.sinothk.map.amap.location.AMapLocation;
 import com.sinothk.map.amap.location.AMapLocationCallback;
 import com.sinothk.map.amap.location.AMapLocationEntity;
 import com.sinothk.map.amap.location.MapLocationHelper;
+import com.sinothk.map.amap.navigate.MapNavigateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,6 @@ public class MapViewByAMapMainActivity extends AppCompatActivity {
         mMapView = (MapView) findViewById(R.id.mapView);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
         mMapView.onCreate(savedInstanceState);
-
         if (aMap == null) {
             aMap = mMapView.getMap();
             initLocMap();

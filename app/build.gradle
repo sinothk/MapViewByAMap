@@ -52,5 +52,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':MapViewByAMap')
 
-//    api 'com.github.sinothk:MapViewByAMap:latest.integration'
+//    api 'com.github.sinothk:MapViewByAMap:1.19.0117'
 }
