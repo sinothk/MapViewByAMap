@@ -2,28 +2,22 @@ package com.sinothk.map.amap.view.demo;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.provider.SyncStateContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
-import com.amap.api.maps.model.Marker;
-import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MultiPointItem;
 import com.amap.api.maps.model.MultiPointOverlay;
 import com.amap.api.maps.model.MultiPointOverlayOptions;
 import com.amap.api.maps.model.MyLocationStyle;
-import com.sinothk.map.amap.location.AMapLocation;
 import com.sinothk.map.amap.location.AMapLocationCallback;
 import com.sinothk.map.amap.location.AMapLocationEntity;
 import com.sinothk.map.amap.location.MapLocationHelper;
-import com.sinothk.map.amap.navigate.MapNavigateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
