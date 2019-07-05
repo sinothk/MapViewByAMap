@@ -44,7 +44,7 @@ dependencies {
         //3D地图so及jar
         api 'com.amap.api:3dmap:6.7.0'
     //    //定位功能
-        api 'com.amap.api:location:4.4.0'
+        api 'com.amap.api:location:4.5.0'
     //    api 'com.github.sinothk:MapLocationByAMap:1.19.0116'
 
         //搜索功能
