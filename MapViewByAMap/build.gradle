@@ -46,7 +46,6 @@ dependencies {
     //    //定位功能
         api 'com.amap.api:location:4.5.0'
     //    api 'com.github.sinothk:MapLocationByAMap:1.19.0116'
-
         //搜索功能
         api 'com.amap.api:search:6.5.0.1'
 //    implementation files('libs/AMap3DMap_6.6.0_AMapNavi_6.5.0_AMapSearch_6.5.0_AMapLocation_4.4.0_20181221.jar')
