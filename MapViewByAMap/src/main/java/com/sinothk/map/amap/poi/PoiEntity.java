@@ -13,6 +13,7 @@ public class PoiEntity {
     private String title;
     private String businessArea;
     private String cityCode;
+    private String cityName;
     private String provinceName;
     private String provinceCode;
     private String direction;
@@ -199,5 +200,13 @@ public class PoiEntity {
 
     public void setSnippet(String snippet) {
         this.snippet = snippet;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 }

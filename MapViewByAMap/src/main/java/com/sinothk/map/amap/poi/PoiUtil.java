@@ -85,6 +85,7 @@ public class PoiUtil {
             poiEntity.setAdName(poi.getAdName());
             poiEntity.setBusinessArea(poi.getBusinessArea());
             poiEntity.setCityCode(poi.getCityCode());
+            poiEntity.setCityName(poi.getCityName());
             poiEntity.setProvinceCode(poi.getProvinceCode());
             poiEntity.setProvinceName(poi.getProvinceName());
             poiEntity.setDirection(poi.getDirection());

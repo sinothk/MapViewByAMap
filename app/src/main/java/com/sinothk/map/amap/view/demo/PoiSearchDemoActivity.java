@@ -28,8 +28,6 @@ public class PoiSearchDemoActivity extends AppCompatActivity {
 
         keyEt = findViewById(R.id.keyEt);
         resultTv = findViewById(R.id.resultTv);
-
-
     }
 
     public void doSearchNearbyBtn(View view) {

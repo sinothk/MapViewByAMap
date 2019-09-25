@@ -36,7 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LocationDemoMainActivity" /> <!-- 开发者申请的key: 2bef576587ffbd1f1f4ce25dcf02792c -->
+        <activity android:name=".LocationDemoMainActivity" />
+
+        <!-- 开发者申请的key: 2bef576587ffbd1f1f4ce25dcf02792c -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="2bef576587ffbd1f1f4ce25dcf02792c" />
