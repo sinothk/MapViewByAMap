@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapViewMainDemoActivity">
+
+
+    <Button
+        android:id="@+id/poiSearchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="gotoPoiSearch"
+        android:text="兴趣点查询" />
+
+    <Button
+        android:id="@+id/mapViewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="gotoMapView"
+        android:text="地图显示" />
+
+    <Button
+        android:id="@+id/locBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="gotoLoc"
+        android:text="定位相关" />
+</LinearLayout>

@@ -20,8 +20,7 @@ import java.util.List;
  *  更新:
  * <pre>
  */
-@Deprecated
-public class MapNavigateUtil {
+public class MapUtil {
 
     public static final int DATA_FROM_BAIDU = 1; // 百度数据
     public static final int DATA_FROM_GAODE = 2; // 高德数据
@@ -76,7 +75,7 @@ public class MapNavigateUtil {
     /**
      * 跳转百度地图
      */
-    public static void goToBaiduMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
+    public static void openBaiduMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
         // 百度数据->中建华府F区: 26.6094876522,106.7336647792
         if (!isInstalled(mActivity, "com.baidu.BaiduMap")) {
             Toast.makeText(mActivity, "请先安装百度地图客户端", Toast.LENGTH_SHORT).show();
@@ -104,7 +103,7 @@ public class MapNavigateUtil {
     /**
      * 跳转高德地图
      */
-    public static void goToGaodeMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
+    public static void openGaodeMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
         // 百度数据->中建华府F区: 26.6094876522,106.7336647792
 
         if (!isInstalled(mActivity, "com.autonavi.minimap")) {
@@ -140,7 +139,7 @@ public class MapNavigateUtil {
      * @param mLat
      * @param dataFromType
      */
-    public static void goToTencentMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
+    public static void openTencentMap(Activity mActivity, String mAddressStr, double mLng, double mLat, int dataFromType) {
         if (!isInstalled(mActivity, "com.tencent.map")) {
             Toast.makeText(mActivity, "请先安装腾讯地图客户端", Toast.LENGTH_SHORT).show();
             return;
@@ -158,5 +157,36 @@ public class MapNavigateUtil {
 
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(stringBuffer));
         mActivity.startActivity(intent);
+    }
+
+    /**
+     * 通过经纬度获取距离(单位：米)
+     *
+     * @param centerLat
+     * @param centerLon
+     * @param lat
+     * @param lng
+     * @return
+     */
+    public static double getDistance(double centerLat, double centerLon, double lat, double lng) {
+        // ==================================
+        double EARTH_RADIUS = 6378.137;
+
+        // ==================================
+        double radLat1 = rad(centerLat);
+        double radLat2 = rad(lat);
+        double a = radLat1 - radLat2;
+        double b = rad(centerLon) - rad(lng);
+        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
+                + Math.cos(radLat1) * Math.cos(radLat2)
+                * Math.pow(Math.sin(b / 2), 2)));
+        s = s * EARTH_RADIUS;
+        s = Math.round(s * 10000d) / 10000d;
+        s = s * 1000;
+        return s;
+    }
+
+    private static double rad(double d) {
+        return d * Math.PI / 180.0;
     }
 }
