@@ -29,13 +29,8 @@
 
         <activity android:name=".PoiSearchDemoActivity" />
 
-        <activity android:name=".MapViewByAMapMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MapViewByAMapMainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".LocationDemoMainActivity" />
 
         <!-- 开发者申请的key: 2bef576587ffbd1f1f4ce25dcf02792c -->
