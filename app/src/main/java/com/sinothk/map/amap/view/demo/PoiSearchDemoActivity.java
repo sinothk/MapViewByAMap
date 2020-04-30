@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
@@ -36,15 +37,19 @@ public class PoiSearchDemoActivity extends AppCompatActivity {
 
             @Override
             public void onFail(String msg) {
-                if (msg == null) {
-
+                if (msg != null) {
+                    Toast.makeText(PoiSearchDemoActivity.this, msg, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(PoiSearchDemoActivity.this, "onFail(String msg)", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onSuccess(ArrayList<PoiEntity> poiListInfo) {
-                if (poiListInfo == null) {
-
+                if (poiListInfo != null) {
+                    Toast.makeText(PoiSearchDemoActivity.this, "数据" + poiListInfo.size(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(PoiSearchDemoActivity.this, "onSuccess数据为空", Toast.LENGTH_SHORT).show();
                 }
             }
         });
