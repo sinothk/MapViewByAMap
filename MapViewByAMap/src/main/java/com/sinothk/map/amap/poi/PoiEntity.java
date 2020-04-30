@@ -31,6 +31,8 @@ public class PoiEntity {
     private String postcode;
     private String snippet;
 
+    private String address;
+
     public String getAdCode() {
         return adCode;
     }
@@ -208,5 +210,13 @@ public class PoiEntity {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
