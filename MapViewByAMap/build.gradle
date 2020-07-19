@@ -43,10 +43,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 //    //3D地图so及jar
     api 'com.amap.api:3dmap:7.4.0'
-
     //2D地图so及jar
 //    api 'com.amap.api:map2d:6.0.0'
-
     //    //定位功能
     api 'com.amap.api:location:4.9.0'
     //    api 'com.github.sinothk:MapLocationByAMap:1.19.0116'
